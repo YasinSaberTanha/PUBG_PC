@@ -1,0 +1,18 @@
+.tabbed_Page {
+    height: 55px;
+    box-shadow: 0 0 0 2px var(--shadow_smx);
+    background-color: var(--background);
+}
+
+.tabbed_Page_icon {
+    width: 32px;
+    height: 24px;
+    stroke: var(--text_sm);
+    fill: var(--background);
+}
+
+.tabbed_Page_text {
+    color: var(--text_sm);
+    font-weight: 100;
+    font-size: 15px;
+}

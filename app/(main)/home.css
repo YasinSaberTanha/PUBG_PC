@@ -1,0 +1,88 @@
+.slider_div {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    outline: none !important;
+}
+
+.slider_div img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.continer_slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* .slick-next {
+    scale: 1.5;
+    left: 30px !important;
+    top: 50% !important;
+}
+
+.slick-next::before,
+.slick-prev::before {
+    color: var(--background);
+}
+
+.slick-prev {
+    z-index: 1000;
+    scale: 1.5;
+    right: 30px !important;
+    top: 50% !important;
+} */
+
+
+.section_type_game {
+    gap: 30px;
+}
+
+.section_type_game a {
+    box-shadow: 6px 5px 20px var(--shadow);
+    width: 130px;
+    height: 130px;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.section_type_game a:hover {
+    rotate: 45deg;
+}
+
+.erangel {
+    color: rgba(32, 78, 204);
+    background-color: rgba(32, 78, 204, 0.45);
+    border: 3px dashed rgba(32, 78, 204);
+}
+
+.livik {
+    color: rgba(204, 32, 32);
+    background-color: rgba(204, 32, 32, 0.45);
+    border: 3px dashed rgba(204, 32, 32);
+}
+
+.tdm {
+    color: rgba(5, 88, 5);
+    background-color: rgba(8, 112, 8, 0.45);
+    border: 3px dashed rgb(5, 88, 5);
+}
+
+.wow {
+    color: rgba(204, 101, 32);
+    background-color: rgba(204, 101, 32, 0.45);
+    border: 3px dashed rgba(204, 101, 32);
+}
+
+.all {
+    color: rgba(0, 0, 0, 0.753);
+    background-color: rgba(0, 0, 0, 0.205);
+    border: 3px dashed rgba(0, 0, 0, 0.753);
+}
+

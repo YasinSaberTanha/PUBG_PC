@@ -1,0 +1,26 @@
+:root {
+  --background: #ffffff;
+  --shadow_smx: #e5e5e5;
+  --shadow_sm: #a1a3a8cc;
+  --shadow: #757575;
+  --shadow_lg: #212121;
+  --text_br: #ffffff;
+  --text_sm: #a1a3a8;
+  --text: #757575;
+  --text_lg: #212121;
+  --icon_red: #ff5252;
+  --btn_red: #ef4056;
+  --border_sm:  rgb(236, 236, 236);
+}
+
+.app {
+  padding-top: 0px;
+  padding-bottom: 55px;
+  background-color: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
