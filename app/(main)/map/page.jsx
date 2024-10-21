@@ -28,7 +28,7 @@ export default async function map({ searchParams }) {
             }
           }} className="map w-100 d-flex text-decoration-none align-items-center">
             <div>
-              <Image src={"/svg/gold.svg"} className="helmet_icon" alt="helmet" width={70} height={70} />
+              <Image src={"/svg/silver.svg"} className="helmet_icon" alt="helmet" width={70} height={70} />
             </div>
 
             <div className="ms-3 d-flex w-100 justify-content-between align-items-center">
@@ -61,7 +61,7 @@ export default async function map({ searchParams }) {
         <div className="map_border">
           <Link href={"/"} className="map w-100 d-flex text-decoration-none align-items-center">
             <div>
-              <Image src={"/svg/gold.svg"} className="helmet_icon" alt="helmet" width={70} height={70} />
+              <Image src={"/svg/bronze.svg"} className="helmet_icon" alt="helmet" width={70} height={70} />
             </div>
 
             <div className="ms-3 d-flex w-100 justify-content-between align-items-center">

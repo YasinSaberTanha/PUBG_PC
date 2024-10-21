@@ -1,0 +1,7 @@
+.group_game_article {
+    height: calc(100vh - 57px);
+    background-color: var(--background);
+}
+.btn_search{
+    background-color: var(--btn_red);
+}

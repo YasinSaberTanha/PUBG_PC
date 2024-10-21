@@ -1,0 +1,77 @@
+.history_article {
+    height: calc(100vh - 57px);
+    background-color: var(--background);
+}
+.head_history{
+    padding: 15px 0;
+    box-shadow: 0 0 0 3px var(--shadow_smx);
+    color: var(--text);
+}    
+
+.box_history{
+    padding: 0px 20px;
+}
+
+.map_border {
+    border-bottom: 1px solid var(--border_sm);
+}
+
+.map {
+    padding: 20px 0;
+}
+
+.map_section {
+    padding: 0 20px;
+}
+
+.helmet_icon {
+    scale: 1.4;
+    width: 50px;
+    height: 50px;
+}
+
+.price {
+    width: 19px;
+    height: 19px;
+    stroke-width: 3;
+    stroke: var(--text);
+}
+
+.map_mobile_icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text);
+}
+
+.map_pc_icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text);
+    scale: 1.12;
+}
+
+.count_user {
+    color: var(--text);
+    height: 20.5px;
+}
+
+.price_box {
+    gap: 3px;
+}
+
+.price_login {
+    height: 19.9px;
+    color: var(--text);
+}
+
+.map_user_icon {
+    width: 30px;
+    height: 100%;
+    fill: var(--icon_red);
+}
+
+.map_user_login {
+    height: 15px;
+    color: var(--icon_red);
+    font-weight: 600;
+}

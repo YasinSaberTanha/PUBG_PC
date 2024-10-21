@@ -9,10 +9,9 @@ import TypeGame from "./components/typeGame";
 
 export default async function Home() {
   return (
-
     <Suspense fallback={<Loading />}>
 
-      <Header slug={"WIR"} />
+      <Header slug={<span className="logo_animation"></span>} />
       <SliderBar />
       <TypeGame />
 

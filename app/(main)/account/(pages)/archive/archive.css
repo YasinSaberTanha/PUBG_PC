@@ -1,0 +1,33 @@
+.running_game_article {
+    height: calc(100vh - 57px);
+    background-color: var(--background);
+}
+
+.head_link {
+    height: 50px;
+    border-bottom: 1px solid var(--border_lg);
+}
+
+.link_information {
+    color: var(--text_sm);
+
+}
+
+.link_visible {
+    color: var(--btn_red);
+    border-bottom: 3px solid var(--btn_red);
+}
+
+.btn-danger {
+    background-color: var(--btn_red) !important;
+}
+
+.image_name {
+    color: var(--text_sm);
+    font-size: small;
+}
+
+.notice {
+    color: var(--text_sm);
+    font-size: small;
+}

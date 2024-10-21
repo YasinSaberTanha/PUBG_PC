@@ -1,0 +1,29 @@
+.box_btn_change{
+    border-bottom: 1px solid var(--border_lg);
+}
+
+.btn_change {
+    font-size: larger;
+    background-color: var(--background);
+    color: var(--text);
+    font-weight: bold;
+    padding-top: 4px;
+    border: none;
+    height: 50px;
+}
+
+.btn_mobe {
+    font-size: larger;
+    background-color: var(--background);
+    color: var(--text);
+    font-weight: bold;
+    padding-top: 4px;
+    border: none;
+    height: 50px;
+    width: 30%;
+}
+
+.btn_change_focus {
+    color: var(--btn_red);
+    border-bottom: 4px solid var(--btn_red);
+}

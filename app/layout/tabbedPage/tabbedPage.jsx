@@ -13,7 +13,7 @@ export default function TabbedPage() {
                     <p className="tabbed_Page_text">خانه</p>
                 </Link>
 
-                <Link href="/" className="col text-decoration-none d-flex justify-content-center flex-column align-items-center">
+                <Link href="/account" className="col text-decoration-none d-flex justify-content-center flex-column align-items-center">
                     <HiOutlineUser className="tabbed_Page_icon" strokeWidth={3} />
                     <p className="tabbed_Page_text">اکانت</p>
                 </Link>

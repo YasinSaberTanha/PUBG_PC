@@ -1,0 +1,233 @@
+body * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.section_account {
+    padding: 120px 0px 0px 0px !important;
+}
+
+.account_header {
+    padding: 10px;
+    height: 120px;
+    box-shadow: 0 0 0 2px var(--shadow_smx);
+    background-color: var(--background);
+}
+
+.account_image {
+    width: 100px;
+    background-color: bisque;
+}
+
+.account_id {
+    width: calc(100% - 100px);
+}
+
+.account_name {
+    color: var(--text_lg);
+    font-weight: bold;
+}
+
+.account_game_id {
+    color: var(--text_lg);
+    font-weight: bolder;
+}
+
+.account_name::-webkit-scrollbar {
+    height: 0;
+}
+
+.account_game_id::-webkit-scrollbar {
+    height: 0;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.account_article {}
+
+
+
+.box_link {
+    padding: 0px 20px;
+}
+
+.link {
+    border-top: 1px solid var(--border);
+    color: var(--text_lg);
+    padding: 12px 0;
+}
+
+.icon {
+    color: #06060a;
+    width: 25px;
+    height: 25px;
+}
+
+.chevron_icon {
+    fill: var(--icon_gray);
+    stroke: var(--background);
+}
+
+.box_activity {
+    padding: 10px;
+}
+
+.inventory {
+    background-color: var(--btn_red);
+    color: var(--background);
+    border: 1px solid var(--btn_red);
+}
+
+.money {
+    height: 21.1px;
+}
+
+.icon_inventory {
+    width: 50px;
+    height: 50px;
+    fill: var(--background);
+    background-color: var(--btn_red);
+
+}
+
+.active_game{
+    background-color: #0d6efd;
+    color: var(--background);
+    border: 1px solid #0d6efd;
+}
+
+.icon_active_game{
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    fill: var(--background);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .box_user {
+    gap: 10px;
+}
+
+
+.box_user button {
+    height: 100px;
+}
+
+
+.setting,
+.team_add,
+.money,
+.create_room {
+    background: var(--background);
+}
+
+.setting {
+    border: 3px solid #0d6efd
+}
+
+.team_add {
+    border: 3px solid #198754
+}
+
+.money {
+    border: 3px solid #dc3545
+}
+
+.create_room {
+    border: 3px solid #66c
+}
+
+.setting svg {
+    width: 50px;
+    height: 50px;
+    fill: #0d6efd;
+}
+
+.team_add svg {
+    width: 50px;
+    height: 50px;
+    fill: #198754;
+}
+
+.money svg {
+    width: 50px;
+    height: 50px;
+    fill: #dc3545;
+}
+
+.create_room svg {
+    width: 50px;
+    height: 50px;
+    fill: #66c;
+}
+
+.box_money {
+    color: var(--background);
+    background-color: #dc3545;
+    border-radius: 3px;
+}
+
+.box_money p {
+    font-size: larger;
+}
+
+.btn-light {
+    color: var(--text_lg);
+    font-weight: 600;
+    background-color: var(--background);
+}
+
+.box_team_add {
+    color: var(--text_lg);
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.box_create_room {
+    border: 3px solid #66c
+}
+
+.setting:hover .box_setting {
+    display: flex !important;
+}
+
+.team_add:hover .box_team_add {
+    display: flex !important;
+}
+
+.money:hover .box_money {
+    display: flex !important;
+} */
