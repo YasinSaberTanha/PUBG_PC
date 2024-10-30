@@ -2,6 +2,41 @@
     height: calc(100vh - 57px);
     background-color: var(--background);
 }
-.btn_search{
+
+.btn_search {
     background-color: var(--btn_red);
+}
+
+@media (min-width: 576px) {
+    .group_game_article {
+        left: 0;
+        width: calc(100% - 310px) !important;
+        height: 100vh;
+    }
+
+    .br {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .group_game_article {
+        position: sticky !important;
+        height: fit-content;
+        border: 2px solid var(--shadow_smx);
+        border-radius: 12px;
+    }
+
+    .search_box {
+        position: static !important;
+        transform: translate(0, 0) !important;
+        padding-right: 8px;
+    }
+
+    .search_box input{
+        box-shadow: none !important;
+    }
+    .btn_search{
+        width: 25% !important;
+    }
 }

@@ -1,5 +1,7 @@
 import DataRoom from "./components/dataRoom"
-import Team from "./components/team"
+import Team from "./components/team/team"
+// import TeamFore from "./components/team/teamFour"
+// import TeamTwo from "./components/team/teamTwo"
 import "./room.css"
 
 export default function Room() {
@@ -7,7 +9,11 @@ export default function Room() {
     return (
         <section className="room_section w-100">
             <DataRoom />
-            <Team />
+
+            <div className="container_room">
+                <Team />
+            </div>
+
         </section>
     )
 

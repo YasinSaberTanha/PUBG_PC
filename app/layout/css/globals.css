@@ -1,6 +1,6 @@
 :root {
   --background: #ffffff;
-  --background_sm:#f0f0f1;
+  --background_sm: #f0f0f1;
   --shadow_smx: #e5e5e5;
   --shadow_sm: #a1a3a8cc;
   --shadow: #757575;
@@ -25,8 +25,51 @@
   background-color: var(--background);
 }
 
-* {
+body>* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.container{
+  padding: 0 !important;
+}
+
+
+@media (max-width: 1400px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 992px) {
+  .container-p {
+    padding: 0 0 0 100px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-p {
+    padding: 0 60px 0 0 ;
+  }
+}
+
+@media (min-width: 576px) {
+  .app {
+    padding-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+  .container {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
 }

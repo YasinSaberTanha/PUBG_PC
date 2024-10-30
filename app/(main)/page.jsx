@@ -12,8 +12,14 @@ export default async function Home() {
     <Suspense fallback={<Loading />}>
 
       <Header slug={<span className="logo_animation"></span>} />
-      <SliderBar />
-      <TypeGame />
+      <div className="container w-100">
+        <div className="container-p w-100">
+          <SliderBar />
+          <TypeGame />
+        </div>
+
+      </div>
+
 
     </Suspense>
   )

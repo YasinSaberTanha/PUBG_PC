@@ -1,0 +1,118 @@
+.room_section {
+    padding: 10px 10px;
+}
+
+.team {
+    position: relative;
+}
+
+.team_members {
+    background-color: var(--map_members);
+    border-top-right-radius: 0 !important;
+}
+
+.team_name {
+    width: 28%;
+    padding: 1px 0 0 7px;
+    background-color: var(--map_members);
+    /* background-image: linear-gradient(-90deg, var(--map_members) 10%, var(--map_members),var(--background)95%); */
+    font-size: smaller;
+    color: #fff;
+    border-radius: 18px 6px 0 0;
+}
+
+.team_name::before {
+    content: '';
+    position: absolute;
+    right: 27%;
+    top: -8px;
+    width: 10px;
+    height: 25px;
+    background-color: var(--background);
+    rotate: 35deg;
+    transform: translate(50%);
+}
+
+.team_members div {
+    background-color: var(--background);
+    width: 70px;
+    height: 70px;
+}
+
+.name_palyer {
+    color: var(--background);
+    font-size: smaller;
+    height: 20px;
+    text-wrap: nowrap;
+}
+
+.name_palyer_box::-webkit-scrollbar {
+    height: 0;
+}
+
+
+@media (min-width: 576px) {
+
+    .box_items {
+        display: grid !important;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-auto-columns: auto auto;
+        grid-auto-rows: auto;
+    }
+
+    .team {
+        max-width: 450px;
+    }
+
+    .container_room {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 20px;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    .container_room {
+        max-width: 900px !important;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 40px 20px;
+    }
+
+    .team_members div {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .container_room {
+        max-width: 950px !important;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 40px 20px;
+    }
+
+    .box_items {
+        column-gap: 60px !important;
+        row-gap: 40px !important;
+    }
+
+    .team_members div {
+        width: 90px;
+        height: 90px;
+    }
+}

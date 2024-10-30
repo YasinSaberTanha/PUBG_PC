@@ -1,0 +1,107 @@
+.room_section {
+    padding: 20px 10px;
+}
+
+.box_items {
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(102px, 102px));
+    grid-template-rows: auto;
+    grid-auto-columns: repeat(auto-fit, minmax(102px, 102px));
+    grid-auto-rows: auto;
+}
+
+.team {
+    position: relative;
+    max-width: 102px;
+}
+
+.team_members {
+    background-color: var(--map_members);
+}
+
+.team_members div {
+    background-color: var(--background);
+    width: 70px;
+    height: 70px;
+}
+
+.name_palyer {
+    color: var(--background);
+    font-size: smaller;
+    height: 20px;
+    text-wrap: nowrap;
+}
+
+.name_palyer_box::-webkit-scrollbar {
+    height: 0;
+}
+
+
+@media (min-width: 576px) {
+    .team {
+        max-width: 210px;
+    }
+
+    .team_members {
+        gap: 16px;
+    }
+
+    .container_room {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 20px;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .box_items {
+        grid-template-columns: repeat(auto-fit, minmax(112px, 112px));
+        grid-auto-columns: repeat(auto-fit, minmax(112px, 112px));
+    }
+
+    .container_room {
+        max-width: 900px !important;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 25px 20px;
+    }
+
+    .team_members div {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .container_room {
+        max-width: 990px !important;
+        margin: auto;
+    }
+
+    .box_items {
+        grid-template-columns: repeat(auto-fit, minmax(122px, 122px));
+        grid-auto-columns: repeat(auto-fit, minmax(122px, 122px));
+    }
+
+    .room_section {
+        padding: 40px 20px;
+    }
+
+    .team {
+        max-width: 225px !important;
+    }
+
+    .team_members div {
+        width: 90px;
+        height: 90px;
+    }
+}

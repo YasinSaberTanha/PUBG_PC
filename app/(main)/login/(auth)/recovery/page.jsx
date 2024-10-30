@@ -1,4 +1,4 @@
-import "./identity.css"
+import "./recovery.css"
 import Link from "next/link"
 import { LuPhone } from "react-icons/lu";
 import { RiLock2Line } from "react-icons/ri";
@@ -12,15 +12,12 @@ export default function CreateAccount() {
                         <h2 className="text-center mb-2">احزار هویت</h2>
 
                         <div className="mt-3">
-                            <input type="text" id="" className="input form-control focus-ring focus-ring-light text-center" placeholder="کد تایید را وارد کنید" />
+                            <input type="text" id="" className="input form-control focus-ring focus-ring-light text-center" placeholder="شماره موبایل" />
                         </div>
 
-                        <div className="time_sms d-flex gap-2 mt-2">
-                            <p>ارسال مجدد </p> <span>0:59</span>
-                        </div>
+                        
 
-
-                        <button className="btn_submit btn-danger btn mt-2">ورود</button>
+                        <button className="btn_submit btn-danger btn mt-4">ورود</button>
                     </div>
                 </form>
             </div>

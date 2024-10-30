@@ -9,7 +9,7 @@ export default function Login() {
     return (
         <section className="login_section position-fixed start-0 top-0 w-100 h-100 z-1">
             <div className="w-100 h-100 d-flex justify-content-center align-items-center p-4">
-                <form className="w-100">
+                <form className="form_box w-100">
                     <div className="box_login w-100 d-flex flex-column p-4 rounded-5 mb-5">
                         <h2 className="text-center mb-3">عضویت</h2>
 

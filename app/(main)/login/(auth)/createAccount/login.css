@@ -28,3 +28,6 @@ body * {
     border: 1px solid var(--shadow_sm);
 }
 
+.form_box {
+    max-width: 350px !important;
+}

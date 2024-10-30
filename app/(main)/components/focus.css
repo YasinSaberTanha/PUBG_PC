@@ -1,4 +1,8 @@
-.box_btn_change{
+.box_btn_change {
+    border-bottom: 1px solid var(--border_lg);
+}
+
+.box_btn_change_mode {
     border-bottom: 1px solid var(--border_lg);
 }
 
@@ -26,4 +30,126 @@
 .btn_change_focus {
     color: var(--btn_red);
     border-bottom: 4px solid var(--btn_red);
+}
+
+.btn_change_focus_mode {
+    color: var(--btn_red);
+    border-bottom: 4px solid var(--btn_red);
+}
+
+.link_image {
+    height: 150px;
+}
+
+.box_scroll::-webkit-scrollbar {
+    background-color: var(--background);
+}
+
+.box_scroll::-webkit-scrollbar-thumb {
+    background-color: var(--icon_gray);
+    border-radius: 3px;
+
+}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 992px) {
+    .section_type_game {
+        padding: 0 !important;
+    }
+
+    .box_item_map {
+        padding: 100px 0 100px 0;
+    }
+
+    .box_btn_change {
+        min-width: 151px !important;
+
+    }
+
+    .btn_change {
+        min-width: 150px !important;
+        font-size: x-large;
+    }
+
+    .btn_mobe {
+        min-width: 150px !important;
+        font-size: x-large;
+    }
+
+    .box_scroll {
+        padding-right: 240px !important;
+    }
+
+    .link_image {
+        width: 450px !important;
+        min-width: 450px !important;
+        height: 50% !important;
+    }
+
+    .none_block {
+        display: block !important;
+    }
+
+
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 576px) {
+    .section_type_game {
+        padding-bottom: 0 !important;
+    }
+
+    .box_btn {
+        direction: ltr;
+        height: 100vh;
+    }
+
+    .box_btn_border_bottom {
+        border-bottom: 1px solid var(--border_lg);
+    }
+
+    .box_btn_change_mode {
+        width: 100% !important;
+        border: none;
+    }
+
+    .box_btn_change {
+        width: 104px !important;
+        border: none;
+        border-right: 1px solid var(--border_lg);
+    }
+
+    .btn_change_focus {
+        border-bottom: none;
+        border-right: 4px solid var(--btn_red) !important;
+    }
+
+    .btn_mobe {
+        width: 100px !important;
+    }
+
+    .btn_change {
+        padding-right: 24px;
+        width: 100px !important;
+    }
+
+    .box_scroll {
+        height: calc(100% - 66px) !important;
+        flex-direction: row !important;
+        overflow-x: scroll;
+        padding-right: 170px;
+        padding-bottom: 16px !important;
+    }
+
+    .link_image {
+        width: 250px;
+        min-width: 250px;
+        height: 100%;
+    }
 }

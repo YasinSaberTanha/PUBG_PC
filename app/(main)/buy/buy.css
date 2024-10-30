@@ -16,10 +16,59 @@
 .buy_map {
     background-color: var(--background);
     border: 3px solid var(--background);
+    left: 0;
+    bottom: 0;
 }
 
-.buy_map a{
+.buy_map a {
     color: var(--text_br);
     background-color: var(--btn_red);
     height: 50px;
+}
+
+
+@media (min-width: 576px) {
+
+    .buy_section {
+        padding-right: 80px;
+    }
+
+
+    .buy_map {
+        width: 100% !important;
+        margin: 50px 0 0 0 !important;
+        padding: 8px !important;
+        position: static !important;
+        border-radius: 30px;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+    .buy_section {
+        padding-right: 0;
+        padding-left: 100px;
+        height: calc(100vh - 65px);
+    }
+
+    .buy_box {
+        width: 30%;
+        max-width: 350px !important;
+        border: 3px solid var(--border_sm);
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .buy_map {
+        width: 100% !important;
+        margin: 100px 0 0 0 !important;
+        padding: 8px !important;
+        position: static !important;
+        border-radius: 30px;
+    }
+
+    .buy_map a {
+        border-radius: 30px;
+    }
 }

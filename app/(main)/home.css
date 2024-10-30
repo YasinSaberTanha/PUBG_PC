@@ -141,7 +141,7 @@
     font-size: 35px;
     font-weight: bolder;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    animation: logoAnimation 1s ease-in;
+    animation: logoAnimation 3.5s;
 }
 
 @keyframes logoAnimation {
@@ -149,15 +149,85 @@
         content: "WarInRoom";
     }
 
-    33% {
-        content: "WarInRom";
+    10% {
+        content: "WarInRoo";
     }
 
-    66% {
-        content: "WaInRm";
+    20% {
+        content: "WarInRo";
+    }
+
+    30% {
+        content: "WarInR";
+    }
+
+    40% {
+        content: "WarIn";
+    }
+
+    50% {
+        content: "WarI";
+    }
+
+    60% {
+        content: "War";
+    }
+
+    70% {
+        content: "Wa";
+    }
+
+    80% {
+        content: "W";
+    }
+
+    90% {
+        content: "WI";
     }
 
     100% {
         content: "WIR";
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .slider_div {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .slider_div {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .slider_div {
+        height: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .slider_div {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .slider_div {
+        height: 250px;
+    }
+
+    .logo_animation::before {
+        padding-right: 60px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider_div {
+        height: 200px;
     }
 }

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Information({ searchParams }) {
     return (
-        <article className="information_article position-fixed start-0 top-0 w-100 z-1">
+        <article className="information_article position-fixed top-0 w-100">
             <div className="head_link w-100 d-flex justify-content-between align-items-center">
                 <Link className={
                     searchParams.visible == "data" ?
@@ -24,7 +24,7 @@ export default function Information({ searchParams }) {
                 }} >رمز عبور</Link>
             </div>
 
-            <div className="show_information w-100">
+            <div className="show_information w-100 h-100 overflow-y-scroll">
                 {
 
                     searchParams.visible == "data" ?
@@ -57,8 +57,8 @@ export default function Information({ searchParams }) {
                                 </div>
                             </div>
 
-
                             <button className="btn btn-danger p-2 mt-3">ثبت</button>
+                            <br className="br"/>
                         </div>
                         :
                         <div className="w-100 p-4 d-flex flex-column gap-3">
@@ -78,6 +78,7 @@ export default function Information({ searchParams }) {
                             </div>
 
                             <button className="btn btn-danger p-2 mt-3">ثبت</button>
+                            <br className="br"/>
                         </div>
                 }
             </div>

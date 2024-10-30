@@ -31,3 +31,30 @@
     color: var(--text_sm);
     font-size: small;
 }
+
+
+@media (min-width: 576px) {
+    .running_game_article {
+        left: 0;
+        width: calc(100% - 310px) !important;
+        height: 100vh;
+    }
+
+    .br {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .running_game_article {
+        position: sticky !important;
+        height: fit-content;
+        border: 2px solid var(--shadow_smx);
+        border-radius: 12px;
+        margin-bottom: 50px;
+    }
+
+    .running_game_article::-webkit-scrollbar {
+        width: 0px;
+    }
+}

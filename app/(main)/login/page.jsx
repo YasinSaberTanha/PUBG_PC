@@ -3,11 +3,12 @@ import Link from "next/link"
 import { LuPhone } from "react-icons/lu";
 import { RiLock2Line } from "react-icons/ri";
 
+
 export default function CreateAccount() {
     return (
         <section className="login_section position-fixed start-0 top-0 w-100 h-100 z-1">
             <div className="w-100 h-100 d-flex justify-content-center align-items-center p-4">
-                <form className="w-100">
+                <form className="form_box w-100">
                     <div className="box_login w-100 d-flex flex-column p-4 rounded-5 mb-5">
                         <h2 className="text-center mb-3">ورود</h2>
                         <div className="input-group  mt-4">
@@ -29,7 +30,7 @@ export default function CreateAccount() {
 
                         <div className="d-flex gap-2  justify-content-center mt-1">
                             <p className="">بازیابی رمز عبور ؟ </p>
-                            <Link href={"/"} className="link-primary text-decoration-none">بازیابی</Link>
+                            <Link href={"/login/recovery"} className="link-primary text-decoration-none">بازیابی</Link>
                         </div>
                     </div>
                 </form>

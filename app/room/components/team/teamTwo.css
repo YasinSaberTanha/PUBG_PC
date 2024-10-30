@@ -1,0 +1,139 @@
+.room_section {
+    padding: 10px 10px;
+}
+
+.box_items {
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto;
+    grid-auto-columns: auto auto;
+    grid-auto-rows: auto;
+}
+
+.team {
+    position: relative;
+    max-width: 190px;
+}
+
+.team_members {
+    background-color: var(--map_members);
+    border-top-right-radius: 0 !important;
+}
+
+.team_name {
+    width: 50%;
+    padding: 1px 0 0 7px;
+    background-color: var(--map_members);
+    /* background-image: linear-gradient(-90deg, var(--map_members) 10%, var(--map_members),var(--background)95%); */
+    font-size: smaller;
+    color: #fff;
+    border-radius: 18px 6px 0 0;
+}
+
+.team_name::before {
+    content: '';
+    position: absolute;
+    right: 48%;
+    top: -8px;
+    width: 10px;
+    height: 25px;
+    background-color: var(--background);
+    rotate: 35deg;
+    transform: translate(50%);
+}
+
+.team_members div {
+    background-color: var(--background);
+    width: 70px;
+    height: 70px;
+}
+
+.name_palyer {
+    color: var(--background);
+    font-size: smaller;
+    height: 20px;
+    text-wrap: nowrap;
+}
+
+.name_palyer_box::-webkit-scrollbar {
+    height: 0;
+}
+
+
+@media (min-width: 576px) {
+
+    .box_items {
+        justify-content: space-around;
+        align-items: center;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+        grid-auto-columns: auto auto auto;
+        grid-auto-rows: auto;
+        column-gap: 0px !important;
+        row-gap: 30px !important;
+    }
+
+    .team {
+        max-width: 210px;
+    }
+
+    .team_members {
+        gap: 16px;
+    }
+
+    .container_room {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 20px;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    .container_room {
+        max-width: 900px !important;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 40px 20px;
+    }
+
+    .team_members div {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .container_room {
+        max-width: 990px !important;
+        margin: auto;
+    }
+
+    .room_section {
+        padding: 40px 20px;
+    }
+
+    .team {
+        max-width: 225px !important;
+    }
+
+    .box_items {
+
+        grid-template-columns: auto auto auto auto;
+        grid-auto-columns: auto auto auto auto;
+        column-gap: 0px !important;
+    }
+
+    .team_members div {
+        width: 90px;
+        height: 90px;
+    }
+}

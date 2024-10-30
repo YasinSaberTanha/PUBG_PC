@@ -1,5 +1,6 @@
 import "./account.css"
 import AccountHeader from "./components/accountHeader";
+import Activity from "./components/activity";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +11,17 @@ export default async function RootLayout({ children }) {
 
   return (
     <section className="section_account">
-      <AccountHeader />
-      {children}
+
+      <div className="continer_account w-100">
+        <div className="box_layout">
+          <div className="link_layout">
+            <AccountHeader />
+            <Activity />
+          </div>
+          {children}
+        </div>
+      </div>
+
     </section>
 
   );
