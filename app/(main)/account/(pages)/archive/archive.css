@@ -10,11 +10,14 @@
 
 .link_information {
     color: var(--text_sm);
-
+    background-color: var(--background);
+    border: none;
 }
 
 .link_visible {
     color: var(--btn_red);
+    background-color: var(--background);
+    border: none;
     border-bottom: 3px solid var(--btn_red);
 }
 
@@ -56,5 +59,10 @@
 
     .running_game_article::-webkit-scrollbar {
         width: 0px;
+    }
+    .show_information_item{
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
     }
 }

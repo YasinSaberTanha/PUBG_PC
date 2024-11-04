@@ -1,10 +1,10 @@
-import History from "./(pages)/history/page";
+// import History from "./(pages)/history/page";
 
 
 
 
 export default function Account() {
     // return (
-    //    // <History />
+    //    <History />
     // )
 }

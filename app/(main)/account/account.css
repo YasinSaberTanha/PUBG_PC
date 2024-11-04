@@ -175,12 +175,18 @@ body * {
         width: 100%;
         border: none;
     }
+    .link {
+        padding: 15px 0;
+    }
 }
 
 @media (min-width: 1200px) {
     .continer_account {
-        padding: 70px 150px 0 250px !important;
+        padding: 70px 0px 0 100px !important;
+        max-width: 1200px;
+        margin: auto;
     }
+
 }
 
 

@@ -5,24 +5,21 @@ body * {
 }
 
 .box_key {
-    left: -62px;
-    top: -62px;
+    left: 0;
+    top: 0;
 }
 
 .box_icon_key {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    border-radius: 100%;
-    border: 3px solid var(--border_sm);
-    width: 100px;
-    height: 100px;
-    background-color: var(--background);
-    rotate: 45deg;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: var(--btn_red);
+
 }
 
 .icon_key {
-    fill: var(--text_sm);
+    fill: var(--background);
     width: 30px;
     height: 30px;
 }
@@ -37,10 +34,22 @@ body * {
     height: auto;
 }
 
+.pass_room {
+    margin-bottom: 100px;
+}
 
+.btn_mode {
+    border: 3px solid var(--border_sm);
+}
 
+.btn_mode_warning {
+    border: 3px solid var(--border_sm);
+    background-color: var(--btn_red);
+}
 
-
+.btn_jay {
+    border: 3px solid var(--border_sm);
+}
 
 
 
@@ -55,5 +64,9 @@ body * {
     .container_room {
         max-width: 850px;
         margin: auto;
+    }
+
+    .pass_room {
+        max-width: 300px;
     }
 }

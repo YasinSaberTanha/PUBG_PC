@@ -1,3 +1,4 @@
+"use client"
 import "./groupGame.css"
 
 export default function GroupGame() {

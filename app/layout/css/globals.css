@@ -17,6 +17,8 @@
   --border_sm: rgb(236, 236, 236);
   --border: #f0f0f1;
   --border_lg: #e0e0e2;
+  --green_border: #a3b18a;
+  --red_border: #ee6055;
 }
 
 .app {

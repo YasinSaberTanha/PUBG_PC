@@ -9,9 +9,6 @@
     color: var(--text);
 }
 
-.btn-danger {
-    background-color: var(--btn_red) !important;
-}
 
 .image_name {
     color: var(--text_sm);
@@ -50,7 +47,14 @@
         border-radius: 12px;
         margin-bottom: 50px;
     }
+
     .production_room_article::-webkit-scrollbar {
         width: 0px;
+    }
+
+    .show_information_item {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
     }
 }

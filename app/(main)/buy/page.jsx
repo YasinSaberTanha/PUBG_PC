@@ -2,7 +2,8 @@ import "./buy.css"
 import Header from "@/app/layout/header/header"
 import Image from "next/image"
 import Link from "next/link"
-export default function Buy({ searchParams }) {
+export default async function Buy(props) {
+    const searchParams = await props.searchParams;
 
     return (
         <>
@@ -10,7 +11,7 @@ export default function Buy({ searchParams }) {
             <section className="buy_section d-lg-flex justify-content-lg-center align-items-lg-center">
                 <div className="buy_box shadow-lg mt-4 pb-3 rounded-5">
                         <div className="buy_header_icon w-100 d-flex justify-content-center align-items-center p-5">
-                            <Image className="header_icon" src={`/svg/${searchParams.icon}`} width={90} height={90} />
+                            <Image className="header_icon" src={`/svg/${searchParams.icon}`} alt="image" width={90} height={90} />
                         </div>
                         <div className="data_map w-100 d-flex justify-content-center align-items-center flex-column flex-lg-column-reverse ">
                             <p>جایزه تا به الان : <span>580,000</span></p>

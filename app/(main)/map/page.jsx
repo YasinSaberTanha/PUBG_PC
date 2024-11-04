@@ -9,7 +9,8 @@ import { FiUser } from "react-icons/fi";
 import { LuLogIn } from "react-icons/lu";
 
 
-export default async function map({ searchParams }) {
+export default async function map(props) {
+  const searchParams = await props.searchParams;
   return (
     <>
       <Header slug={searchParams.slug} />
@@ -122,8 +123,6 @@ export default async function map({ searchParams }) {
                 </div>
               </Link>
             </div >
-
-
 
           </section>
         </div>
