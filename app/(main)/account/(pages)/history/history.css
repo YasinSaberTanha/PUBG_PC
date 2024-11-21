@@ -5,7 +5,7 @@
 
 .head_history {
     padding: 15px 0;
-    box-shadow: 0 0 0 2px var(--shadow_smx);
+    border-bottom: 2px solid var(--shadow_smx);
     color: var(--text);
 }
 

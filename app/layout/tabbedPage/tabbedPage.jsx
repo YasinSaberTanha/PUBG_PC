@@ -1,10 +1,12 @@
 "use client"
+
 import "./tabbedPage.css";
 import Link from "next/link";
 import { BiSolidHomeAlt2 } from "react-icons/bi";
 import { HiOutlineUser } from "react-icons/hi2";
 import { LuBookOpen } from "react-icons/lu";
 import { usePathname } from "next/navigation";
+
 
 
 export default function TabbedPage() {

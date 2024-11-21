@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
 import { HiOutlineArchiveBoxArrowDown } from "react-icons/hi2";
+import { TbMessageDots } from "react-icons/tb";
 
 
 export default function Activity() {
@@ -30,10 +31,7 @@ export default function Activity() {
             </div>
 
             <div className="box_link">
-                <Link href={{
-                    pathname: "/account/information",
-                    query: { visible: "data" }
-                }} className="link w-100 d-flex justify-content-between align-items-center text-decoration-none border-0">
+                <Link href={"/account/information"} className="link w-100 d-flex justify-content-between align-items-center text-decoration-none border-0">
                     <div className="d-flex align-items-center gap-2">
                         <IoSettingsOutline className="icon" /> <p>تنظیمات</p>
                     </div>
@@ -49,7 +47,14 @@ export default function Activity() {
 
                 <Link href={"/account/productionRoom"} className="link w-100 d-flex justify-content-between align-items-center text-decoration-none">
                     <div className="d-flex align-items-center gap-2">
-                        <PiMapPinPlus className="icon" /> <p>ساخت اتاق</p>
+                        <PiMapPinPlus className="icon icon_helper" /> <p>ساخت اتاق</p>
+                    </div>
+                    <FaChevronLeft className="chevron_icon" />
+                </Link>
+
+                <Link href={"/account/messages"} className="link w-100 d-flex justify-content-between align-items-center text-decoration-none">
+                    <div className="d-flex align-items-center gap-2">
+                        <TbMessageDots className="icon" strokeWidth={1.5} /> <p>پیام ها</p>
                     </div>
                     <FaChevronLeft className="chevron_icon" />
                 </Link>
@@ -60,6 +65,7 @@ export default function Activity() {
                     </div>
                     <FaChevronLeft className="chevron_icon" />
                 </Link>
+
             </div>
 
         </article>

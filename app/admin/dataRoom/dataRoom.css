@@ -1,0 +1,11 @@
+
+.data_room_box {
+    height: 100vh;
+}
+
+.data_room_admin {
+    border-bottom: 3px solid var(--shadow_smx);
+}
+.btn_ban_number{
+    margin-right: auto !important;
+}

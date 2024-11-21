@@ -69,6 +69,10 @@ body * {
     height: 25px;
 }
 
+/* .icon_helper {
+    fill: rgb(6, 138, 253);
+} */
+
 .chevron_icon {
     fill: var(--icon_gray);
     stroke: var(--background);
@@ -175,6 +179,7 @@ body * {
         width: 100%;
         border: none;
     }
+
     .link {
         padding: 15px 0;
     }
