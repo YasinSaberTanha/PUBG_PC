@@ -7,22 +7,43 @@ import { ImMobile2 } from "react-icons/im";
 import { FiMonitor } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { LuLogIn } from "react-icons/lu";
+import Maps from "./components/maps";
 
 
 export default async function map(props) {
-  const searchParams = await props.searchParams;
+
+  const slug = await props.searchParams.slug;
+
+  const RenderMap = async () => {
+    try {
+      const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/program/map/?room_type=${slug}`)
+      const maps = await result.json()
+
+      const RenderMap = maps.map((map) => (
+        <Maps data={map} slug={slug} />
+      ))
+
+      return RenderMap;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+
   return (
     <>
-      <Header slug={searchParams.slug} />
+      <Header slug={slug} />
       <div className="container w-100">
         <div className="container-p w-100">
           <section className="map_section">
 
-            <div className="map_border">
+            {RenderMap()}
+
+            {/* <div className="map_border">
               <Link href={{
                 pathname: "/buy",
                 query: {
-                  slug: searchParams.slug,
+                  slug: slug,
                   id: 23,
                   icon: "gold.svg"
                 }
@@ -122,7 +143,7 @@ export default async function map(props) {
                   </div>
                 </div>
               </Link>
-            </div >
+            </div > */}
 
           </section>
         </div>

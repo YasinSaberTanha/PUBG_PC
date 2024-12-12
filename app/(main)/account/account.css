@@ -17,7 +17,11 @@ body * {
 
 .account_image {
     width: 100px;
-    background-color: bisque;
+}
+
+.icon_user {
+    border-color: var(--shadow_smx);
+    fill: var(--shadow_smx);
 }
 
 .account_id {
@@ -27,6 +31,10 @@ body * {
 .account_name {
     color: var(--text_lg);
     font-weight: bold;
+}
+
+.bg-secondary {
+    background-color: var(--shadow_smx) !important;
 }
 
 .account_game_id {

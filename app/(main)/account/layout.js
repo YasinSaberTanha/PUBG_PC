@@ -1,6 +1,10 @@
+import { cookies } from "next/headers";
 import "./account.css"
 import AccountHeader from "./components/accountHeader";
 import Activity from "./components/activity";
+import CreateFormData from "@/app/layout/functions/createFormData";
+import { redirect } from "next/navigation";
+import JWT from "jsonwebtoken"
 
 export const metadata = {
   title: "Create Next App",
@@ -9,20 +13,30 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
+  const cookie = (await cookies()).get("Token_User");
+  if (cookie == undefined) {
+    redirect("/login");
+  }
+
+  const userData = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/userAccount/account/`, {
+    method: "POST",
+    body: CreateFormData({
+      Token_User: cookie.value
+    })
+  }).then(res => res.json())
+
   return (
     <section className="section_account">
-
       <div className="continer_account w-100">
         <div className="box_layout">
           <div className="link_layout">
-            <AccountHeader />
-            <Activity />
+            <AccountHeader data={userData} />
+            <Activity data={userData.inventory} />
           </div>
           {children}
         </div>
       </div>
-
+      <script id="user_data" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(userData) }}></script>
     </section>
-
   );
 }

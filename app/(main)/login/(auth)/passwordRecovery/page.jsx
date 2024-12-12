@@ -1,18 +1,20 @@
 "use client"
 import "./passwordRecovery.css"
 import 'react-toastify/dist/ReactToastify.css';
+import "@/app/layout/loding/doteLoader/doteLoder.css"
 import { LuPhone } from "react-icons/lu";
 import { RiLock2Line } from "react-icons/ri";
 import { LuKey } from "react-icons/lu";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import CreateFormData from "@/app/layout/functions/createFormData";
 
+
 export default function PasswordRecovery() {
-    
+    const [loding, setLoding] = useState(false)
     const router = useRouter()
 
     useEffect(() => {
@@ -41,6 +43,7 @@ export default function PasswordRecovery() {
     const UserPasswordRecovery = async (values) => {
 
         try {
+            setLoding(true)
             const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/auth/passwordRecovery/`, {
                 method: "POST",
                 body: CreateFormData(values)
@@ -56,6 +59,8 @@ export default function PasswordRecovery() {
             }
         } catch (err) {
             console.log(err);
+        }finally{
+            setLoding(false)
         }
     }
 
@@ -108,8 +113,12 @@ export default function PasswordRecovery() {
                                 </div>
                                 {errors.validition_code && touched.validition_code && <span className="form_errors text-danger ps-1 pt-1 m-0">{errors.validition_code}</span>}
 
-             
-                                <button type="submit" className="btn_submit btn-danger btn mt-3">ورود</button>
+                                {loding ?
+                                    <div className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center">
+                                        <div className="loader"></div>
+                                    </div> :
+                                    <button type="submit" className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center"> ثبت </button>
+                                }
                             </div>
                         </Form>
                     )}

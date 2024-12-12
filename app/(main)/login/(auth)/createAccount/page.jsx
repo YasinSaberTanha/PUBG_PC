@@ -1,6 +1,7 @@
 "use client"
 import "./createAccount.css"
 import 'react-toastify/dist/ReactToastify.css';
+import "@/app/layout/loding/doteLoader/doteLoder.css"
 import Link from "next/link"
 import { LuPhone } from "react-icons/lu";
 import { RiLock2Line } from "react-icons/ri";
@@ -10,9 +11,10 @@ import { Formik, Form, Field } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
 import { useRouter } from "next/navigation";
 import CreateFormData from "@/app/layout/functions/createFormData";
+import { useState } from "react";
 
 export default function CreateAccount() {
-
+    const [loding, setLoding] = useState(false)
     const router = useRouter()
 
     const createAccount = Yup.object().shape({
@@ -22,8 +24,8 @@ export default function CreateAccount() {
     })
 
     const UserCreateAccount = async (values) => {
-
         try {
+            setLoding(true)
             const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/auth/createAccount/`, {
                 method: "POST",
                 body: CreateFormData(values)
@@ -32,6 +34,7 @@ export default function CreateAccount() {
 
             if (data.status === true) {
                 sessionStorage.setItem("phone", values.phone)
+                sessionStorage.setItem("password", values.password)
                 const [_, minutes1, seconds1] = data.time_left.split(':');
                 sessionStorage.setItem("time_left", (+minutes1 * 60) + +seconds1)
                 router.push('/login/identity')
@@ -40,6 +43,8 @@ export default function CreateAccount() {
             }
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoding(false)
         }
     }
 
@@ -98,7 +103,13 @@ export default function CreateAccount() {
                                 </div>
                                 {errors.confirmPassword && touched.confirmPassword && <span className="form_errors text-danger ps-1 pt-1 m-0">{errors.confirmPassword}</span>}
 
-                                <button type="submit" className="btn_submit btn-danger btn mt-4">ثبت</button>
+                                {loding ?
+                                    <div className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center">
+                                        <div className="loader"></div>
+                                    </div> :
+                                    <button type="submit" className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center"> ثبت </button>
+                                }
+
 
                                 <div className="d-flex gap-2 justify-content-center mt-4">
                                     <p className=""> حساب کاربری دارید ؟ </p>

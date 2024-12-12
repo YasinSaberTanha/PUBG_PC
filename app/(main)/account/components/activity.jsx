@@ -10,7 +10,7 @@ import { HiOutlineArchiveBoxArrowDown } from "react-icons/hi2";
 import { TbMessageDots } from "react-icons/tb";
 
 
-export default function Activity() {
+export default function Activity({ data }) {
     return (
         <article className="account_article">
 
@@ -18,7 +18,7 @@ export default function Activity() {
                 <Link href={"/"} className="inventory p-1 w-100 h-100 text-decoration-none rounded-3 d-flex justify-content-center align-items-center">
                     <RiMoneyDollarCircleFill className="icon_inventory" />
                     <div className="overflow-hidden w-100  d-flex align-items-center justify-content-center gap-1">
-                        <p>موجودی :</p> <span className="money">10,000,000 </span> <p>ت</p>
+                        <p>موجودی :</p> <span className="money">{data}</span> <p>ت</p>
                     </div>
                 </Link>
 
@@ -45,7 +45,7 @@ export default function Activity() {
                     <FaChevronLeft className="chevron_icon" />
                 </Link>
 
-                <Link href={"/account/productionRoom"} className="link w-100 d-flex justify-content-between align-items-center text-decoration-none">
+                <Link href={"/account/production"} className="link w-100 d-flex justify-content-between align-items-center text-decoration-none">
                     <div className="d-flex align-items-center gap-2">
                         <PiMapPinPlus className="icon icon_helper" /> <p>ساخت اتاق</p>
                     </div>

@@ -3,9 +3,9 @@
     background-color: var(--background);
 }
 
-.head_history {
+.head_history_lg {
     padding: 15px 0;
-    border-bottom: 2px solid var(--shadow_smx);
+    border-bottom: 1px solid var(--shadow_smx);
     color: var(--text);
 }
 
@@ -36,7 +36,7 @@
         margin-bottom: 50px;
     }
 
-    .head_history {
+    .head_history_lg {
         padding: 15px 0;
         border: 2px solid var(--shadow_smx);
         border-bottom: none;

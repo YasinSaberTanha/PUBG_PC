@@ -23,11 +23,13 @@
 
 .btn-danger {
     background-color: var(--btn_red) !important;
+    height: 42px;
 }
 
 .image_name {
     color: var(--text_sm);
     font-size: small;
+    text-wrap: nowrap;
 }
 
 .notice {
@@ -35,6 +37,15 @@
     font-size: small;
 }
 
+.form_errors {
+    font-size: small;
+}
+
+.head_history {
+    padding: 15px 0;
+    border-bottom: 2px solid var(--shadow_smx);
+    color: var(--text);
+}
 
 @media (min-width: 576px) {
     .information_article {
@@ -63,7 +74,8 @@
     .show_information {
         height: auto !important;
     }
-    .show_information_item{
+
+    .show_information_item {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;

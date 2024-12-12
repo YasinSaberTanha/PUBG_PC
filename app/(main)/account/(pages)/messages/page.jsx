@@ -5,7 +5,7 @@ import { Accordion } from "react-bootstrap";
 export default function Messages() {
     return (
         <article className="messages_article position-fixed top-0 w-100">
-            <h2 className="head_history text-center">پیام ها</h2>
+            <h2 className="head_history_lg text-center">پیام ها</h2>
             <div className="messages_box">
                 <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">

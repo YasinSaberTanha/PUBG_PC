@@ -1,14 +1,16 @@
 "use client"
 import "./recovery.css"
 import 'react-toastify/dist/ReactToastify.css';
+import "@/app/layout/loding/doteLoader/doteLoder.css"
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import { useRouter } from "next/navigation";
 import CreateFormData from "@/app/layout/functions/createFormData";
+import { useState } from "react";
 
 export default function Recovery() {
-
+    const [loding, setLoding] = useState(false)
     const router = useRouter()
 
     const recovery = Yup.object().shape({
@@ -17,6 +19,7 @@ export default function Recovery() {
 
     const UserRecovery = async (values) => {
         try {
+            setLoding(true)
             const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/auth/recovery/`, {
                 method: "POST",
                 body: CreateFormData(values)
@@ -33,6 +36,8 @@ export default function Recovery() {
             }
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoding(false)
         }
     }
 
@@ -71,7 +76,12 @@ export default function Recovery() {
                                 </div>
                                 {errors.phone && touched.phone && <span className="form_errors text-danger ps-1 pt-1 m-0">{errors.phone}</span>}
 
-                                <button className="btn_submit btn-danger btn mt-4">ورود</button>
+                                {loding ?
+                                    <div className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center">
+                                        <div className="loader"></div>
+                                    </div> :
+                                    <button type="submit" className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center"> ثبت </button>
+                                }
                             </div>
                         </Form>
                     )}

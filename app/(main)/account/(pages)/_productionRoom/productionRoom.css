@@ -15,6 +15,11 @@
     font-size: small;
 }
 
+.btn-danger {
+    background-color: var(--btn_red) !important;
+    height: 42px;
+}
+
 
 .notice {
     color: var(--text_sm);

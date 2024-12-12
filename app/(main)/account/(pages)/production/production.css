@@ -5,17 +5,19 @@
 
 .head_history {
     padding: 15px 0;
-    box-shadow: 0 0 0 2px var(--shadow_smx);
+    border-bottom: 2px solid var(--shadow_smx);
     color: var(--text);
 }
 
 .btn-danger {
     background-color: var(--btn_red) !important;
+    height: 42px;
 }
 
 .image_name {
     color: var(--text_sm);
     font-size: small;
+    text-wrap: nowrap;
 }
 
 
@@ -30,6 +32,12 @@
 
 .alert_header {
     background-color: var(--background);
+    height: 50%;
+}
+
+.alert_header h5 {
+    background-color: var(--background);
+    border-bottom: 1px solid var(--shadow_smx);
 }
 
 .Close_alert_icon {
@@ -39,11 +47,12 @@
 }
 
 .alert_header p {
-    height: 83%;
     color: var(--text_lg);
 }
 
-
+.form_errors {
+    font-size: small;
+}
 
 @media (min-width: 576px) {
     .production_article {
@@ -54,6 +63,10 @@
 
     .br {
         display: none;
+    }
+
+    .alert_header {
+        height: auto;
     }
 }
 

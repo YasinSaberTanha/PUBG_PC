@@ -1,80 +1,43 @@
-"use client"
+//import { IoCloseSharp } from "react-icons/io5";
 import "./production.css"
-import { IoCloseSharp } from "react-icons/io5";
+import ProductionForm from "../components/production";
+import CreateFormData from "@/app/layout/functions/createFormData";
+import { cookies } from "next/headers";
+import JWT from "jsonwebtoken"
+import ProductionRoom from "../_productionRoom/productionRoom";
+import ProductionUpdate from "../_productionRoom/_productionUpdate/productionUpdate";
 
-export default function Production() {
+export default async function Production() {
+
+    const cookie = (await cookies()).get("Token_User").value
+    const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/userAccount/getProduction/`, {
+        method: "POST",
+        body: CreateFormData({
+            Token_User: cookie
+        })
+    })
+    const data = await result.json()
+
     return (
-        <article className="production_article position-fixed top-0 w-100 z-1 overflow-y-scroll">
-            <h2 className="head_history text-center">احراز هویت</h2>
-            <div className="d-none alert_box d-flex justify-content-center align-items-center position-fixed start-0 top-0 w-100 h-100 bg-black bg-opacity-50 z-3">
-                <div className="alert_header w-75 h-50 rounded-3 position-relative">
-                    <h5 className="text-center position-absolute start-50 top-0 translate-middle-x mt-2">قوانین</h5>
-                    <button className="btn">
-                        <IoCloseSharp className="Close_alert_icon" />
-                    </button>
+        <>
+            {
+                data.user_type != "user" ?
+                    data.user_room ? <ProductionUpdate /> : <ProductionRoom />
+                    :
+                    < article className="production_article position-fixed top-0 w-100 z-1 overflow-y-scroll" >
+                        <h2 className="head_history text-center">احراز هویت</h2>
 
-                    <hr />
-                    <div className="w-100 px-4 pt-2 h-100 ">
-                        <p className="w-100 overflow-y-scroll">
 
-                            مداد رنگی ها مشغول بودند به جز مداد سفید، هیچکس به او کار نمیداد، همه میگفتند : تو به هیچ دردی نمیخوری، یک شب که مداد رنگی ها تو سیاهی شب گم شده بودند، مداد سفید تا صبح ماه کشید مهتاب کشید و انقدر ستاره کشید که کوچک و کوچکتر شد صبح توی جعبه مداد رنگی جای خالی او با هیچ رنگی  پر نشد، به یاد هم باشیم شاید فردا ما هم در کنار هم نباشیم…
-
-                            مداد رنگی ها مشغول بودند به جز مداد سفید، هیچکس به او کار نمیداد، همه میگفتند : تو به هیچ دردی نمیخوری، یک شب که مداد رنگی ها تو سیاهی شب گم شده بودند، مداد سفید تا صبح ماه کشید مهتاب کشید و انقدر ستاره کشید که کوچک و کوچکتر شد صبح توی جعبه مداد رنگی جای خالی او با هیچ رنگی  پر نشد، به یاد هم باشیم شاید فردا ما هم در کنار هم نباشیم…
-
-                            <button className="btn btn-danger p-2 w-100 mt-3">موافقم</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="w-100">
-                <div className="w-100 p-4">
-
-                    <div className="show_information_item d-flex flex-column gap-3">
-                        <div>
-                            <label htmlFor="" className="form-label">نام :</label>
-                            <input type="text" name="" className="form-control" />
-                        </div>
-
-                        <div>
-                            <label htmlFor="" className="form-label">نام خانوادگی :</label>
-                            <input type="text" name="" className="form-control" />
-                        </div>
-
-                        <div>
-                            <label htmlFor="" className="form-label">تاریخ تولد :</label>
-                            <input type="text" name="" className="form-control" />
-                        </div>
-
-                        <div>
-                            <label htmlFor="" className="form-label">عکس شما :</label>
-                            <div className="input-group custom-file-button">
-
-                                <label className="input-group-text" htmlFor="review-image" role="button">انتخاب عکس</label>
-                                <label htmlFor="review-image" className="form-control" id="review-image-label" role="button"> <span className="image_name">عکسی انتخاب نشده است</span></label>
-                                <input type="file" className="d-none" id="review-image" accept="image/*" />
+                        <div className="w-100">
+                            <div className="w-100 p-4">
+                                {
+                                    data.status ? <div className="alert alert-success text-center shadow">در حال پردازش</div> : <ProductionForm userId={JWT.decode(cookie).user_id} />
+                                }
                             </div>
                         </div>
+                    </ article>
+            }
+        </>
 
-                        <div>
-                            <label htmlFor="" className="form-label">عکس کارت ملی :</label>
-                            <div className="input-group custom-file-button">
-
-                                <label className="input-group-text upload_image_btn" htmlFor="review-image" role="button">انتخاب عکس</label>
-                                <label htmlFor="review-image" className="form-control" id="review-image-label" role="button"> <span className="image_name">عکسی انتخاب نشده است</span></label>
-                                <input type="file" className="d-none" id="review-image" accept="image/*" />
-                            </div>
-                        </div>
-
-                        <div className="d-flex gap-2 align-items-center justify-content-lg-center">
-                            <input type="checkbox" name="" id="checkbox" className="checkbox" />
-                            <label htmlFor="checkbox">با قوانین موافقم</label>
-                        </div>
-                    </div>
-
-                    <button className="btn btn-danger p-2 mt-4 w-100">ثبت</button>
-                </div>
-            </div>
-        </article>
     )
 }

@@ -1,5 +1,6 @@
 "use client"
 import "./identity.css"
+import "@/app/layout/loding/doteLoader/doteLoder.css"
 import CreateFormData from "@/app/layout/functions/createFormData";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -9,12 +10,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import TimeLeft from "../components/timeLeft";
 import { useRouter } from "next/navigation";
 
-
 export default function Identity() {
-
-    const router = useRouter()
-
     const [Storage, setStorage] = useState({ phone: null, time_left: null })
+    const [loding, setLoding] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         const GetSessionStorage = () => {
@@ -40,11 +39,13 @@ export default function Identity() {
 
     const UserIdentity = async (values) => {
         try {
-            const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/auth/identity/`, {
+            setLoding(true)
+            const result = await fetch(`http://localhost:3000/api/auth/identity`, {
                 method: "POST",
                 body: CreateFormData(values)
             })
-            const data = await result.json();
+            const data = await result.json()
+
             if (data.status === true) {
                 router.push('/')
             } else {
@@ -52,7 +53,9 @@ export default function Identity() {
             }
 
         } catch (err) {
-            console.log(err);
+            toast.error("مشکلی پیش آمده دوباره تلاش کنید")
+        } finally {
+            setLoding(false)
         }
     }
 
@@ -91,11 +94,15 @@ export default function Identity() {
                                 {errors.validition_code && touched.validition_code && <span className="form_errors text-danger ps-1 pt-1 m-0">{errors.validition_code}</span>}
 
                                 <div className="time_sms d-flex gap-2 mt-2">
-                                    <p>ارسال مجدد </p> {Storage.time_left && <TimeLeft TimeLeft={Storage.time_left} />}
+                                    {Storage.time_left && <TimeLeft TimeLeft={Storage.time_left} />}
                                 </div>
 
-
-                                <button className="btn_submit btn-danger btn mt-2">ورود</button>
+                                {loding ?
+                                    <div className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center">
+                                        <div className="loader"></div>
+                                    </div> :
+                                    <button type="submit" className="btn btn_submit btn-danger p-2 mt-3 w-100 d-flex justify-content-center align-items-center"> ثبت </button>
+                                }
                             </div>
                         </Form>
                     )}

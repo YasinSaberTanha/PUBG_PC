@@ -1,9 +1,7 @@
 // import History from "./(pages)/history/page";
 
 
-
-
-export default function Account() {
+export default async function Account() { 
     // return (
     //    <History />
     // )
