@@ -18,10 +18,9 @@ export default function Maps({ data, slug }) {
     return (
         <div className="map_border">
             <Link href={{
-                pathname: "/buy",
+                pathname: `map/${data.map_id}/`,
                 query: {
                     slug: slug,
-                    ...data
                 }
             }} className="map w-100 d-flex text-decoration-none align-items-center">
                 <div>

@@ -12,7 +12,7 @@ import { TbMessageDots } from "react-icons/tb";
 
 export default function Activity({ data }) {
     return (
-        <article className="account_article">
+        <div className="account_article">
 
             <div className="box_activity d-flex flex-column w-100 align-items-center gap-2">
                 <Link href={"/"} className="inventory p-1 w-100 h-100 text-decoration-none rounded-3 d-flex justify-content-center align-items-center">
@@ -68,6 +68,6 @@ export default function Activity({ data }) {
 
             </div>
 
-        </article>
+        </div>
     )
 }

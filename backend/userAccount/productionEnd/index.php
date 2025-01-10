@@ -42,7 +42,7 @@ if ($user[0]->user_type != "user") {
 
     if ($file1) {
         API(
-            "UPDATE rooms SET original_id = ?, id_image = ?, winner_photo = ?, room_end = 0 WHERE user_id = ? AND room_end = 1;",
+            "UPDATE rooms SET original_id = ?, id_image = ?, winner_photo = ?, room_end = 0 WHERE user_id = ? AND room_end = 3;",
             [$_POST["original_id"], $id_image, $winner_photo, $userId]
         );
 

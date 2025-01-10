@@ -42,10 +42,6 @@
         max-width: 210px;
     }
 
-    .team_members {
-        gap: 16px;
-    }
-
     .container_room {
         max-width: 850px;
         margin: auto;
@@ -88,8 +84,8 @@
     }
 
     .box_items {
-        grid-template-columns: repeat(auto-fit, minmax(122px, 122px));
-        grid-auto-columns: repeat(auto-fit, minmax(122px, 122px));
+        grid-template-columns: repeat(auto-fit, minmax(112px, 112px));
+        grid-auto-columns: repeat(auto-fit, minmax(112px, 112px));
     }
 
     .room_section {

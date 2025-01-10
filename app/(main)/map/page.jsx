@@ -10,13 +10,13 @@ import { LuLogIn } from "react-icons/lu";
 import Maps from "./components/maps";
 
 
-export default async function map(props) {
+export default async function map({ searchParams }) {
 
-  const slug = await props.searchParams.slug;
+  const slug = (await searchParams).slug;
 
   const RenderMap = async () => {
     try {
-      const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/program/map/?room_type=${slug}`)
+      const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_NAME}/backend/program/getMap/?room_type=${slug}`)
       const maps = await result.json()
 
       const RenderMap = maps.map((map) => (

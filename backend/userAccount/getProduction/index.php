@@ -10,10 +10,18 @@ $userId = JWT($_POST["Token_User"])->user_id;
 
 $user = API("SELECT user_id FROM a_user_approval WHERE user_id = ?;", [$userId]);
 $user_type = API("SELECT user_type FROM users WHERE user_id = ?;", [$userId])[0]->user_type;
-$user_room = boolval(API("SELECT user_id FROM rooms WHERE user_id = ? AND room_end = 1;", [$userId]));
+$room_end = API("SELECT room_end FROM rooms WHERE user_id = ? AND room_end = 1 OR room_end = 2 OR room_end = 3;", [$userId]);
 
 if (boolval($user)) {
-    echo json_encode(["status" => true, "user_type" => $user_type, "user_room" => $user_room]);
+    if (boolval($room_end)) {
+        echo json_encode(["status" => true, "user_type" => $user_type, "room_end" => $room_end[0]->room_end]);
+    } else {
+        echo json_encode(["status" => true, "user_type" => $user_type, "room_end" => 0]);
+    }
 } else {
-    echo json_encode(["status" => false, "user_type" => $user_type, "user_room" => $user_room]);
+    if (boolval($room_end)) {
+        echo json_encode(["status" => false, "user_type" => $user_type, "room_end" => $room_end[0]->room_end]);
+    } else {
+        echo json_encode(["status" => false, "user_type" => $user_type, "room_end" => 0]);
+    }
 }

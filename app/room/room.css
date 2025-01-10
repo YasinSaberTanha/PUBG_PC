@@ -51,9 +51,11 @@ body * {
     border: 3px solid var(--border_sm);
 }
 
-
-
-
+.icon_user {
+    background-color: var(--shadow_smx);
+    border-color: var(--map_members);
+    fill: var(--map_members);
+}
 
 
 

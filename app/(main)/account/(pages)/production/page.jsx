@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import JWT from "jsonwebtoken"
 import ProductionRoom from "../_productionRoom/productionRoom";
 import ProductionUpdate from "../_productionRoom/_productionUpdate/productionUpdate";
+import ProductionLevel from "../_productionLevel/productionLevel";
 
 export default async function Production() {
 
@@ -16,17 +17,24 @@ export default async function Production() {
             Token_User: cookie
         })
     })
+
+
     const data = await result.json()
 
     return (
         <>
             {
                 data.user_type != "user" ?
-                    data.user_room ? <ProductionUpdate /> : <ProductionRoom />
+                    data.room_end == 0 ?
+                        <ProductionRoom />
+                        :
+                        data.room_end == 1 || data.room_end == 2 ?
+                            <ProductionLevel />
+                            :
+                            <ProductionUpdate />
                     :
-                    < article className="production_article position-fixed top-0 w-100 z-1 overflow-y-scroll" >
+                    <article className="production_article position-fixed top-0 w-100 z-1 overflow-y-scroll" >
                         <h2 className="head_history text-center">احراز هویت</h2>
-
 
                         <div className="w-100">
                             <div className="w-100 p-4">
@@ -35,7 +43,7 @@ export default async function Production() {
                                 }
                             </div>
                         </div>
-                    </ article>
+                    </article>
             }
         </>
 

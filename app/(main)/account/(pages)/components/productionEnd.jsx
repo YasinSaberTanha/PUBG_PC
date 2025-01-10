@@ -36,6 +36,7 @@ export default function ProductionEnd() {
                 body: CreateFormData(values)
             })
             const data = await result.json()
+            console.log(data);
 
             if (data.status === true) {
                 toast.success(data.message)

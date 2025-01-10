@@ -1,0 +1,19 @@
+.production_view {
+    background-color: var(--background);
+}
+
+.production_view_header {
+    border-bottom: 2px solid var(--shadow_smx);
+}
+
+
+@media (min-width: 768px) {
+    .container_room {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .pass_room {
+        max-width: 300px;
+    }
+}

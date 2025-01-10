@@ -10,7 +10,18 @@ $userId = JWT($_COOKIE["Token_User"])->user_id;
 
 $user = API("SELECT user_type, inventory FROM users WHERE user_id = ?;", [$userId]);
 
+$room = API("SELECT user_id FROM rooms WHERE user_id = ? AND room_end = 1 OR room_end = 2;", [$userId]);
+
+if (boolval($room)) exit;
+
 if ($user[0]->user_type != "user") {
+
+    $validition = API("SELECT validition FROM admins WHERE user_id = ?", [$userId])[0]->validition;
+
+    if (!boolval($validition)) {
+        echo json_encode("به دلیل گذارش های زیاد تعلیق شده اید باید تا برسی دوباره منتظر بمانید");
+        exit;
+    }
 
     switch ($_POST["input_amount"]) {
         case ($_POST["input_amount"] <= 5000):
@@ -85,6 +96,22 @@ if ($user[0]->user_type != "user") {
             VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW());",
             [$userId, $_POST["room_name"], $_POST["room_id"], $_POST["room_password"], $_POST["room_type"], $_POST["multi_player"], $maximum_player, $_POST["input_amount"], $_POST["license_pc"], $photoName, $level_svg]
         );
+
+        $map_id = API("SELECT map_id FROM rooms WHERE user_id = ? AND room_end = 1", [$userId])[0]->map_id;
+
+        $maximum_team = $maximum_player / $_POST["multi_player"];
+
+        $player_number = 0;
+
+        for ($i = 0; $i < $maximum_team; $i++) {
+            API("INSERT INTO room_teams (map_id, team_number) VALUES ($map_id, $i)");
+            $taem_id = API("SELECT taem_id FROM room_teams WHERE map_id = $map_id")[$i]->taem_id;
+
+            for ($j = 0; $j < $_POST["multi_player"]; $j++) {
+                $player_number += 1;
+                API("INSERT INTO room_players (taem_id, player_number, map_id) VALUES ($taem_id, $player_number, $map_id)");
+            }
+        }
 
         echo json_encode(["status" => true, "message" => "اطلاعات ثبت شد"]);
     }

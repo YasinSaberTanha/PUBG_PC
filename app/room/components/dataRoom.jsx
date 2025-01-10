@@ -14,7 +14,7 @@ export default function DataRoom() {
                 <div className="data_room position-absolute top-50 start-50 translate-middle w-100 h-100 gap-2 p-3 d-flex disabled flex-column align-items-center">
 
                     <div className="h-auto w-100">
-                        <div className=" w-100"><button type="button" class="btn-close p-2" aria-label="Close"></button></div>
+                        <div className=" w-100"><button type="button" className="btn-close p-2" aria-label="Close"></button></div>
                     </div>
 
 
@@ -37,7 +37,7 @@ export default function DataRoom() {
             <div className="d-none box_data_room position-fixed top-50 start-50 translate-middle w-100 h-100 z-3">
                 <div className="data_room position-absolute top-50 start-50 translate-middle w-100 h-100 gap-2 p-3 d-flex disabled flex-column align-items-center">
                     <div className="h-auto w-100">
-                        <div className=" w-100"><button type="button" class="btn-close p-2" aria-label="Close"></button></div>
+                        <div className=" w-100"><button type="button" className="btn-close p-2" aria-label="Close"></button></div>
                     </div>
 
 
